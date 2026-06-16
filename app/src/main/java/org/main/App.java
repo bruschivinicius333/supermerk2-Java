@@ -3,8 +3,9 @@
  */
 package org.main;
 
-import CaixaRapido;
 import javax.swing.JFrame;
+
+import org.CaixaRapido.CaixaRapido;
 
 public class App {
 
@@ -14,24 +15,7 @@ public class App {
 
         // caixaRapido.setUndecorated(true);
 
-        caixaRapido.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-        caixaRapido.setVisible(true);
-
-        // var main = new JFrame();
-        //
-        // var mainPanel = new JPanel();
-        //
-        // main.add(mainPanel);
-        //
-        // main.setSize(300, 300);
-        //
-        // main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //
-        // main.setVisible(true);
-        //
-        // var a = new JOptionPane("asasg");
-        // main.add(a);
+        //caixaRapido.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
     }
 

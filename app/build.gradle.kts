@@ -34,7 +34,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.bruschi.App"
+    mainClass = "org.main.App"
 }
 
 tasks.named<Test>("test") {
