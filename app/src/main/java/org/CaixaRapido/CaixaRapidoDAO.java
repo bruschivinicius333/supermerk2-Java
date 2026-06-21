@@ -12,10 +12,11 @@ public class CaixaRapidoDAO {
     private final String USER = "ta_pegandofogo";
     private final String PASSWORD = "3142"; 
 
-    private long id = 0;
+    private long id = 0; // barcode
     private String name = "";
     private String description = "";
     private float price = 0;
+    private long quantity = 0;
 
     public CaixaRapidoDAO() {
         try {
@@ -25,12 +26,50 @@ public class CaixaRapidoDAO {
         }
     }
 
-    public void create(long id, String name, String description, float price) {
+    public void create(long id, String name, String description, float price, long quantity) {
         try {
-            var statement = connection.createStatement(
-                "INSERT INTO product (id, name, description, price) " +
-                "VALUES (?, ?, ?, ?)" 
+
+            var statement = connection.prepareStatement(
+                "INSERT INTO product (id, name, description, price, quantity) " +
+                "VALUES (?, ?, ?, ?, ?)" 
             );
+
+            statement.setLong(1, id);
+            statement.setString(2, name);
+            statement.setString(3, description);
+            statement.setFloat(4, price);
+            statement.setLong(5, quantity);
+
+            boolean success = statement.execute();
+
+            if (!success) {
+                System.out.println("Failure: 0 rows updated");
+            }
+
+        } catch(SQLException e) {
+            System.err.println(e);
+        }
+    }
+
+    public void insert(long id, long quantity) {
+        try {
+            
+            var statement = connection.prepareStatement(
+                "INSERT INTO product (id, quantity) " +
+                "VALUES (?, ?)" 
+            );
+
+            statement.setLong(1, id);            
+            statement.setLong(2, quantity);
+
+            boolean success = statement.execute();
+
+            if (!success) {
+                System.out.println("Failure: 0 rows updated");
+            }
+
+        } catch(SQLException e) {
+            System.err.println(e);
         }
     }
 }
