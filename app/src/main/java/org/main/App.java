@@ -13,10 +13,6 @@ public class App {
 
         var caixaRapido = new CaixaRapido();
 
-        // caixaRapido.setUndecorated(true);
-
-        //caixaRapido.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
     }
 
 }

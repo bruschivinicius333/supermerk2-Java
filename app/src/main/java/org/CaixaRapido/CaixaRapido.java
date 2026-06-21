@@ -25,13 +25,13 @@ public class CaixaRapido extends JFrame {
     
     private final JPanel reportPane = new JPanel();
     private final JScrollPane reportPaneScroll = new JScrollPane(reportPane);
-    private final Map<JPanel, String> reportPaneElements = new HashMap<>();
-    private final enum reportPaneElementsEnum {
+    private enum reportPaneElementsEnum {
         ID,
         NAME,
         DESCRIPTION,
         PRICE        
     };
+    private final Map<JPanel, reportPaneElementsEnum> reportPaneElements = new HashMap<>();
 
     private final JPanel keyShortcuts = new JPanel();
 
@@ -62,7 +62,7 @@ public class CaixaRapido extends JFrame {
         reportPaneScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         reportPaneScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
-
+        reportPaneScroll.add(reportPaneElements<)
 
     }
 
@@ -98,7 +98,9 @@ public class CaixaRapido extends JFrame {
 
 
 
+        // caixaRapido.setUndecorated(true);
 
+        //caixaRapido.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
 
 
